@@ -1,15 +1,19 @@
-import Skill from "./skills"
-import Detail from "./details"
-import Heading from "./heading"
-import Section from "./section"
-import components from "./components"
+import Skill from './skills'
+import Detail from './details'
+import Heading from './heading'
+import Section from './section'
+import components from './components'
 import { Fragment } from 'react'
 
-const column = ({ secondary }) => {
-  return Object.keys(secondary).map((section) => {
-    const Component = components[section]
-    return <Component {...secondary[section]} />
-  })
+const column = ({ secondary, className }) => {
+  return (
+    <section className={className}>
+      {Object.keys(secondary).map((section) => {
+        const Component = components[section]
+        return <Component {...secondary[section]} />
+      })}
+    </section>
+  )
   // return (
   //   <Fragment>
   //     <Section>

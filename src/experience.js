@@ -1,15 +1,17 @@
 import {v4 as uuid} from "uuid"
 import { Fragment } from 'react'
-const experience = ({ data }) => {
+const experience = ({ className, data }) => {
   return (
-    <article>
-      {data.map(({ title, company, bullets }) => (
+    <article className={className}>
+      {data.map(({ heading, company, bullets }) => (
         <section key={uuid()}>
-          <h2>{title}</h2>
+          <h3>{heading}</h3>
           <p>{company}</p>
+          <ul>
           {bullets.map((bullet) => (
             <li key={uuid()}>{bullet}</li>
           ))}
+          </ul>
         </section>
       ))}
     </article>

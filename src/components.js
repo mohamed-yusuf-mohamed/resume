@@ -1,8 +1,8 @@
 import interests from './interests'
 import education from './education'
 import other from './other'
-import experience from './experience'
-import summary from './summary'
+import experience from './experience.index'
+import summary from './summary.index'
 // import heading from './heading'
 // import section from './section'
 import details from "./details"

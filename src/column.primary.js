@@ -1,12 +1,16 @@
-import components from "./components"
+import components from './components'
 
 import { Fragment } from 'react'
 
-const column = ({ primary }) => {
-  return Object.keys(primary).map((section) => {
-    const Component = components[section]
-    return <Component {...primary[section]} />
-  })
+const column = ({ primary, className }) => {
+  return (
+    <section className={className}>
+      {Object.keys(primary).map((section) => {
+        const Component = components[section]
+        return <Component {...primary[section]} />
+      })}
+    </section>
+  )
   // return (
   //   <Fragment>
   //     <Title>
